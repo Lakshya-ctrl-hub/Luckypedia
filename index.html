@@ -1,283 +1,371 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lakshya's Wikipedia</title>
-<style>
-    body {
-        margin: 0;
-        font-family: sans-serif;
-        background-color: #f8f9fa;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshya's Wikipedia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f8f9fa;
+        }
 
-    /* Top bar */
-    .top-bar {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #a2a9b1;
-        font-size: 14px;
-        padding: 5px 15px;
-        display: flex;
-        justify-content: flex-end;
-        gap: 15px;
-    }
-    .top-bar a {
-        color: #0645ad;
-        text-decoration: none;
-    }
-    .top-bar a:hover {
-        text-decoration: underline;
-    }
+        /* Top bar */
+        .top-bar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #a2a9b1;
+            font-size: 14px;
+            padding: 5px 15px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+        }
 
-    /* Header section */
-    .header {
-        display: flex;
-        align-items: center;
-        padding: 10px 15px;
-        background-color: white;
-        border-bottom: 1px solid #a2a9b1;
-    }
-    .header img {
-        margin-right: 15px;
-    }
-    .header h1 {
-        font-size: 22px;
-        margin: 0;
-    }
+        .top-bar a {
+            color: #0645ad;
+            text-decoration: none;
+        }
 
-    /* Nav bar */
-    .nav-bar {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #a2a9b1;
-        display: flex;
-        padding: 5px 15px;
-        gap: 20px;
-    }
-    .nav-bar a {
-        color: #0645ad;
-        text-decoration: none;
-        font-size: 14px;
-    }
-    .nav-bar a:hover {
-        text-decoration: underline;
-    }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
 
-    .banner {
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 20px 10px;
-    border-bottom: 1px solid #a2a9b1;
-}
+        /* Header section */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: white;
+            border-bottom: 1px solid #a2a9b1;
+        }
 
-.banner h1 {
-    font-size: 28px;
-    font-weight: normal;
-    margin: 0;
-}
+        .header img {
+            margin-right: 15px;
+        }
 
-.banner h1 a {
-    color: #3366cc;
-    text-decoration: none;
-}
+        .header h1 {
+            font-size: 22px;
+            margin: 0;
+        }
 
-.banner h1 a:hover {
-    text-decoration: underline;
-}
+        /* Nav bar */
+        .nav-bar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #a2a9b1;
+            display: flex;
+            padding: 5px 15px;
+            gap: 20px;
+        }
 
-.banner p {
-    font-size: 16px;
-    margin: 5px 0;
-}
+        .nav-bar a {
+            color: #0645ad;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-.banner p a {
-    color: #3366cc;
-    text-decoration: none;
-}
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
 
-.banner p a:hover {
-    text-decoration: underline;
-}
+        .banner {
+            text-align: center;
+            background-color: #f8f9fa;
+            padding: 20px 10px;
+            border-bottom: 1px solid #a2a9b1;
+        }
 
-.banner .stats {
-    font-size: 14px;
-    color: #202122;
-    margin-top: 5px;
-}
+        .banner h1 {
+            font-size: 28px;
+            font-weight: normal;
+            margin: 0;
+        }
 
-.banner .stats a {
-    color: #3366cc;
-}
+        .banner h1 a {
+            color: #3366cc;
+            text-decoration: none;
+        }
 
-.sister-projects {
-    background-color: #f8f9fa;
-    border: 1px solid #a2a9b1;
-    padding: 15px;
-    margin: 20px auto;
-    max-width: 900px;
-}
+        .banner h1 a:hover {
+            text-decoration: underline;
+        }
 
-.sister-projects h2 {
-    margin-top: 0;
-    font-size: 20px;
-    font-weight: bold;
-}
+        .banner p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
 
-.sister-projects p {
-    font-size: 14px;
-    line-height: 1.5;
-}
+        .banner p a {
+            color: #3366cc;
+            text-decoration: none;
+        }
 
-.sister-projects a {
-    color: #0645ad;
-    text-decoration: none;
-}
+        .banner p a:hover {
+            text-decoration: underline;
+        }
 
-.sister-projects a:hover {
-    text-decoration: underline;
-}
+        .banner .stats {
+            font-size: 14px;
+            color: #202122;
+            margin-top: 5px;
+        }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 15px;
-}
+        .banner .stats a {
+            color: #3366cc;
+        }
 
-.projects-grid div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    font-size: 13px;
-}
+        .sister-projects {
+            background-color: #f8f9fa;
+            border: 1px solid #a2a9b1;
+            padding: 15px;
+            margin: 20px auto;
+            max-width: 900px;
+        }
 
-.projects-grid img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 5px;
-}
+        .sister-projects h2 {
+            margin-top: 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
+        .sister-projects p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
 
-</style>
+        .sister-projects a {
+            color: #0645ad;
+            text-decoration: none;
+        }
+
+        .sister-projects a:hover {
+            text-decoration: underline;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .projects-grid div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .projects-grid img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+
+        /* hamberg menu  */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        /* Hamburger icon */
+        .menu-icon {
+            cursor: pointer;
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+        }
+
+        /* Hidden menu */
+        .menu {
+            display: none;
+            background: #f0f0f0;
+            padding: 10px;
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 8px 0;
+        }
+
+        .menu a:hover {
+            background-color: #ddd;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Top bar -->
-<div class="top-bar">
-    <a href="https://donate.wikimedia.org">Donate</a>
-    <a href="https://auth.wikimedia.org/enwiki/wiki/Special:CreateAccount">Create account</a>
-    <a href="https://auth.wikimedia.org/enwiki/wiki/Special:UserLogin">Log in</a>
-</div>
+    <!-- Top bar -->
+    <div class="top-bar">
+        <a href="https://donate.wikimedia.org">Donate</a>
+        <a href="https://auth.wikimedia.org/enwiki/wiki/Special:CreateAccount">Create account</a>
+        <a href="https://auth.wikimedia.org/enwiki/wiki/Special:UserLogin">Log in</a>
+    </div>
 
-<!-- Header -->
-<div class="header">
-    <img src="3 lines.png" alt="Menu" height="50">
-    <a href="https://en.wikipedia.org/wiki/Main_Page">
-        <img src="wikipedia image.png" alt="Wikipedia" height="60">
-    </a>
-</div>
+    <!-- Header -->
+    <div class="header">
+        <!-- Hamburger Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
 
-<!-- Navigation bar -->
-<div class="nav-bar">
-    <a href="https://en.wikipedia.org/wiki/Main_Page">Main page</a>
-    <a href="https://en.wikipedia.org/wiki/Talk:Main_Page">Talk</a>
-    <a href="https://en.wikipedia.org/w/index.php?title=Main_Page&action=edit">View source</a>
-    <a href="https://en.wikipedia.org/w/index.php?title=Main_Page&action=history">View history</a>
-</div>
+        <!-- Menu Content -->
+        <div class="menu" id="menu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+            <a href="#">Login</a>
+            <a href="#">Sign in</a>
+            <a href="#">Account</a>
+            <a href="#">Store</a>
+            <a href="#">Notes</a>
+            <a href="#">Help me</a>
+        </div>
+        <a href="https://lakshya-ctrl-hub.github.io/practice/">
+            <img src="Logo luckypoedia.0.png" alt="Luckypedia" height="60">
+        </a>
+    </div>
 
-<div class="banner">
-    <h1>Welcome to Lakshya's <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>,</h1>
-    <p>the <a href="#">free encyclopedia</a> that <a href="#">anyone can edit</a>.</p>
-    <p class="stats">
-        <a href="#">107,534</a> active editors · <a href="#">7,036,543</a> articles in <a href="#">English</a>
-    </p>
-</div>
+    <!-- Navigation bar -->
+    <div class="nav-bar">
+        <a href="https://en.wikipedia.org/wiki/Main_Page">Main page</a>
+        <a href="https://en.wikipedia.org/wiki/Talk:Main_Page">Talk</a>
+        <a href="https://en.wikipedia.org/w/index.php?title=Main_Page&action=edit">View source</a>
+        <a href="https://en.wikipedia.org/w/index.php?title=Main_Page&action=history">View history</a>
+    </div>
 
-<ul>
-    <li>
- <h1 style="padding: 15px;  margin: 10px;">            View source for Main Page of Lakshya's Wikipedia</h1>
-    </li>
-</ul>
-<!-- Page title -->
+    <div class="banner">
+        <h1>Welcome to Lakshya's <a href="https://lakshya-ctrl-hub.github.io/practice/">Luckypedia</a>,</h1>
+        <p>the <a href="#">free encyclopedia</a> that <a href="#">anyone can edit</a>.</p>
+        <p class="stats">
+            <a href="#">107,534</a> active editors · <a href="#">7,036,543</a> articles in <a href="#">English</a>
+        </p>
+    </div>
+
+    <ul>
+        <li>
+            <h1 style="padding: 15px;  margin: 10px;"> View source for Main Page of Lakshya's Luckypedia</h1>
+        </li>
+    </ul>
+    <!-- Page title -->
 
 
 
 
-<div class="sister-projects">
-    <h2>Wikipedia's sister projects</h2>
-    <p>
-        Lakshya's Wikipedia is written by volunteer editors and hosted by the
-        <a href="#">Wikimedia Foundation</a>, a non-profit organization that also hosts a range of other volunteer
-        <a href="#">projects</a>:
-    </p>
+    <div class="sister-projects">
+        <h2>Luckypedia's sister projects</h2>
+        <p>
+            Lakshya's Luckypedia is written by volunteer editors and hosted by the
+            <a href="#">Luckymedia Foundation</a>, a non-profit organization that also hosts a range of other volunteer
+            <a href="#">projects</a>:
+        </p>
 
-    <div class="projects-grid">
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/60px-Commons-logo.svg.png" alt="Commons">
-            <a href="#">Commons</a>
-            <span>Free media repository</span>
-        </div>
-        <div>
-            <img src="https://www.mediawiki.org/static/images/icons/mediawikiwiki.svg" alt="MediaWiki">
-            <a href="#">MediaWiki</a>
-            <span>Wiki software development</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Wikimedia_Community_Logo.svg/60px-Wikimedia_Community_Logo.svg.png" alt="Meta-Wiki">
-            <a href="#">Meta-Wiki</a>
-            <span>Wikimedia project coordination</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/60px-Wikibooks-logo.svg.png" alt="Wikibooks">
-            <a href="#">Wikibooks</a>
-            <span>Free textbooks and manuals</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/120px-Wikidata-logo.svg.png" alt="Wikidata">
-            <a href="#">Wikidata</a>
-            <span>Free knowledge base</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Wikinews-logo.svg/120px-Wikinews-logo.svg.png" alt="Wikinews">
-            <a href="#">Wikinews</a>
-            <span>Free-content news</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/60px-Wikiquote-logo.svg.png" alt="Wikiquote">
-            <a href="#">Wikiquote</a>
-            <span>Collection of quotations</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/60px-Wikisource-logo.svg.png" alt="Wikisource">
-            <a href="#">Wikisource</a>
-            <span>Free-content library</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/60px-Wikispecies-logo.svg.png" alt="Wikispecies">
-            <a href="#">Wikispecies</a>
-            <span>Directory of species</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/120px-Wikiversity_logo_2017.svg.png" alt="Wikiversity">
-            <a href="#">Wikiversity</a>
-            <span>Free learning tools</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wikivoyage-Logo-v3-icon.svg/60px-Wikivoyage-Logo-v3-icon.svg.png" alt="Wikivoyage">
-            <a href="#">Wikivoyage</a>
-            <span>Free travel guide</span>
-        </div>
-        <div>
-            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Wiktionary-logo-v2.svg/60px-Wiktionary-logo-v2.svg.png" alt="Wiktionary">
-            <a href="#">Wiktionary</a>
-            <span>Dictionary and thesaurus</span>
+        <div class="projects-grid">
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/60px-Commons-logo.svg.png"
+                    alt="Commons">
+                <a href="#">Commons</a>
+                <span>Free media repository</span>
+            </div>
+            <div>
+                <img src="Lakshya malik photo.jpg" alt="MediaWiki">
+                <a target="_blank" href="https://www.instagram.com/lakshyamalik_/">Lakshya Malik</a>
+                <span>Instagram Account</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Wikimedia_Community_Logo.svg/60px-Wikimedia_Community_Logo.svg.png"
+                    alt="Meta-Wiki">
+                <a href="#">Meta-Wiki</a>
+                <span>Luckymedia project coordination</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/60px-Wikibooks-logo.svg.png"
+                    alt="Wikibooks">
+                <a href="#">Luckybooks</a>
+                <span>Free textbooks and manuals</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Wikidata-logo.svg/120px-Wikidata-logo.svg.png"
+                    alt="Wikidata">
+                <a href="#">Luckydata</a>
+                <span>Free knowledge base</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Wikinews-logo.svg/120px-Wikinews-logo.svg.png"
+                    alt="Wikinews">
+                <a href="#">Luckynews</a>
+                <span>Free-content news</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikiquote-logo.svg/60px-Wikiquote-logo.svg.png"
+                    alt="Wikiquote">
+                <a href="#">Luckyquote</a>
+                <span>Collection of quotations</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/60px-Wikisource-logo.svg.png"
+                    alt="Wikisource">
+                <a href="#">Luckysource</a>
+                <span>Free-content library</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/60px-Wikispecies-logo.svg.png"
+                    alt="Wikispecies">
+                <a href="#">Luckyspecies</a>
+                <span>Directory of species</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/120px-Wikiversity_logo_2017.svg.png"
+                    alt="Wikiversity">
+                <a href="#">Luckyversity</a>
+                <span>Free learning tools</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wikivoyage-Logo-v3-icon.svg/60px-Wikivoyage-Logo-v3-icon.svg.png"
+                    alt="Wikivoyage">
+                <a href="#">Luckyvoyage</a>
+                <span>Free travel guide</span>
+            </div>
+            <div>
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/06/Wiktionary-logo-v2.svg/60px-Wiktionary-logo-v2.svg.png"
+                    alt="Wiktionary">
+                <a href="#">Luctionary</a>
+                <span>Dictionary and thesaurus</span>
+            </div>
         </div>
     </div>
-</div>
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
 
 
 
 
 
 </body>
+
 </html>
